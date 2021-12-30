@@ -5,21 +5,21 @@ import (
 	"sync"
 )
 
-type Server struct {
+type Node struct {
 	number int64
 	mutex  sync.Mutex
 }
 
-func NewServer() Server {
-	return Server{
+func NewNode() Node {
+	return Node{
 		number: -1,
 	}
 }
 
-func (s *Server) Increment(ctx context.Context, void *VoidMessage) (*IncrementMessage, error) {
-	s.mutex.Lock()
-	defer s.mutex.Unlock()
+func (n *Node) Increment(ctx context.Context, void *VoidMessage) (*IncrementMessage, error) {
+	n.mutex.Lock()
+	defer n.mutex.Unlock()
 
-	s.number++
-	return &IncrementMessage{Number: s.number}, nil
+	n.number++
+	return &IncrementMessage{Number: n.number}, nil
 }

@@ -25,6 +25,9 @@ func main() {
 	var options []grpc.ServerOption
 	grpcServer := grpc.NewServer(options...)
 
-	increment.RegisterCommunicationServer(grpcServer, &increment.NewServer())
-	grpcServer.Serve(lis)
+	node := increment.NewNode()
+	increment.RegisterCommunicationServer(grpcServer, &node)
+	if err := grpcServer.Serve(lis); err != nil {
+		log.Fatalf("Failed to serve gRPC client on port %d. Error: %v", *port, err)
+	}
 }

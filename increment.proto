@@ -1,6 +1,6 @@
 syntax = "proto3";
 package increment;
-option go_package = "github.com/Hexfall/increment";
+option go_package = "github.com/Hexfall/increment;increment";
 
 message VoidMessage {}
 
