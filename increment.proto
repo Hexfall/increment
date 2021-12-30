@@ -1,0 +1,12 @@
+syntax = "proto3";
+package increment;
+
+message VoidMessage {}
+
+message IncrementMessage {
+    int64 number = 1;
+}
+
+service IncrementService {
+    rpc Increment(VoidMessage) returns (IncrementMessage) {}
+}
