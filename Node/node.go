@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/Hexfall/Increment/increment/github.com/Hexfall/increment"
+	"github.com/Hexfall/Increment/increment"
 	"google.golang.org/grpc"
 )
 
