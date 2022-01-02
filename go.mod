@@ -1,4 +1,4 @@
-module github.com/Hexfall/increment
+module github.com/Hexfall/Increment
 
 go 1.17
 
